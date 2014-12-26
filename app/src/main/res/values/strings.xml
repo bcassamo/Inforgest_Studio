@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Inforgest</string>
+    <string name="app_description">        IgestMobile is a sales management system, designed for android,
+        in order to facilitate access to the system and solve the problem away from the customer-supplier.</string>
+    <string name="dbl_url">www.database.co.mz</string>
+    <string name="igest_welcome">Welcome to InforGest</string>
+    <string name="designed_by">Designed By Banucho Cassamo</string>
+
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+    <string-array name="nav_drawer_menu">
+        <item>Home</item>
+        <item>System</item>
+        <item>Archive</item>
+        <item>Client</item>
+        <item>Suppliers</item>
+        <item>Products</item>
+        <item>Treasury</item>
+        <item>Technical assistence</item>
+        <item>Listings</item>
+        <item>About</item>
+    </string-array>
+
+
+</resources>
