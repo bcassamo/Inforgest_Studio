@@ -1,22 +1,26 @@
 package mz.com.peach.inforgest;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import mz.com.peach.inforgest.dao.InforgestDAO;
+import mz.com.peach.inforgest.fragment.about.AboutFragment;
+import mz.com.peach.inforgest.fragment.archive.ArchiveFragment;
+import mz.com.peach.inforgest.fragment.customer.CustomerFragment;
+import mz.com.peach.inforgest.fragment.home.HomeFragment;
+import mz.com.peach.inforgest.fragment.product.ProductFragment;
+import mz.com.peach.inforgest.fragment.supplier.SupplierFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -31,6 +35,7 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    private InforgestDAO dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +50,71 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        dao = new InforgestDAO(this);
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
+        /*fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+                .commit();*/
+
+        Fragment fragment;
+        switch (position) {
+            // Home
+            case 0:
+                fragment = new HomeFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // System
+            case 1:
+                fragment = PlaceholderFragment.newInstance(position + 1);
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // Archive
+            case 2:
+                fragment = new ArchiveFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // Client
+            case 3:
+                fragment = new CustomerFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // Suppliers
+            case 4:
+                fragment = new SupplierFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // Products
+            case 5:
+                fragment = new ProductFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // Treasury
+            case 6:
+                fragment = PlaceholderFragment.newInstance(position + 1);
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // Technical assistence
+            case 7:
+                fragment = PlaceholderFragment.newInstance(position + 1);
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // Listings
+            case 8:
+                fragment = PlaceholderFragment.newInstance(position + 1);
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            // About
+            case 9:
+                fragment = new AboutFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+        }
     }
 
     public void onSectionAttached(int number) {
@@ -66,6 +127,36 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4: mTitle = getString(R.string.title_section4);
+                break;
+            case 5: mTitle = getString(R.string.title_section5);
+                break;
+            case 6: mTitle = getString(R.string.title_section6);
+                break;
+            case 7: mTitle = getString(R.string.title_section7);
+                break;
+            case 8: mTitle = getString(R.string.title_section8);
+            break;
+            case 9: mTitle = getString(R.string.title_section9);
+                break;
+            case 10: mTitle = getString(R.string.title_section10);
+                break;
+        }
+    }
+
+    public void seleccionarOpcao(View view){
+        switch (view.getId()) {
+            case R.id.action_product_family:
+                startActivity(new Intent(this, FamilyProductListActivity.class));
+                break;
+            case R.id.action_group:
+                startActivity(new Intent(this, GroupProductListActivity.class));
+                break;
+            case R.id.action_product_type:
+                startActivity(new Intent(this, TypeProductListActivity.class));
+                break;
+            case R.id.action_currency2:
                 break;
         }
     }
