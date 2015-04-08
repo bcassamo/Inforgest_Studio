@@ -16,11 +16,9 @@ import android.view.ViewGroup;
 
 import mz.com.peach.inforgest.dao.InforgestDAO;
 import mz.com.peach.inforgest.fragment.about.AboutFragment;
-import mz.com.peach.inforgest.fragment.archive.ArchiveFragment;
 import mz.com.peach.inforgest.fragment.customer.CustomerFragment;
 import mz.com.peach.inforgest.fragment.home.HomeFragment;
 import mz.com.peach.inforgest.fragment.product.ProductFragment;
-import mz.com.peach.inforgest.fragment.supplier.SupplierFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -70,47 +68,47 @@ public class MainActivity extends ActionBarActivity
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
             // System
-            case 1:
+            /*case 1:
                 fragment = PlaceholderFragment.newInstance(position + 1);
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;
+                break;*/
             // Archive
-            case 2:
+            /*case 2:
                 fragment = new ArchiveFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;
+                break;*/
             // Client
-            case 3:
+            case 1:
                 fragment = new CustomerFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
             // Suppliers
-            case 4:
+            /*case 4:
                 fragment = new SupplierFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;
+                break;*/
             // Products
-            case 5:
+            case 2:
                 fragment = new ProductFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
             // Treasury
-            case 6:
+            case 3:
                 fragment = PlaceholderFragment.newInstance(position + 1);
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
             // Technical assistence
-            case 7:
+            /*case 7:
                 fragment = PlaceholderFragment.newInstance(position + 1);
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;
+                break;*/
             // Listings
-            case 8:
+            /*case 8:
                 fragment = PlaceholderFragment.newInstance(position + 1);
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;
+                break;*/
             // About
-            case 9:
+            case 4:
                 fragment = new AboutFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
@@ -122,25 +120,25 @@ public class MainActivity extends ActionBarActivity
             case 1:
                 mTitle = getString(R.string.title_section1);
                 break;
-            case 2:
+            /*case 2:
                 mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
+                break;*/
+            /*case 3:
                 mTitle = getString(R.string.title_section3);
+                break;*/
+            case 2: mTitle = getString(R.string.title_section4);
                 break;
-            case 4: mTitle = getString(R.string.title_section4);
+            /*case 5: mTitle = getString(R.string.title_section5);
+                break;*/
+            case 3: mTitle = getString(R.string.title_section6);
                 break;
-            case 5: mTitle = getString(R.string.title_section5);
+            case 4: mTitle = getString(R.string.title_section7);
                 break;
-            case 6: mTitle = getString(R.string.title_section6);
-                break;
-            case 7: mTitle = getString(R.string.title_section7);
-                break;
-            case 8: mTitle = getString(R.string.title_section8);
+            /*case 8: mTitle = getString(R.string.title_section8);
             break;
             case 9: mTitle = getString(R.string.title_section9);
-                break;
-            case 10: mTitle = getString(R.string.title_section10);
+                break;*/
+            case 15: mTitle = getString(R.string.title_section10);
                 break;
         }
     }
@@ -157,6 +155,17 @@ public class MainActivity extends ActionBarActivity
                 startActivity(new Intent(this, TypeProductListActivity.class));
                 break;
             case R.id.action_currency2:
+                break;
+        }
+    }
+
+    public void customerFilesOption(View view){
+        switch (view.getId()) {
+            case R.id.btnCustomers:
+                startActivity(new Intent(this, ClientListActivity.class));
+                break;
+            case R.id.btnCurAccount:
+                startActivity(new Intent(this, GroupProductListActivity.class));
                 break;
         }
     }

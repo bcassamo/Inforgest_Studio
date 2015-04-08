@@ -106,9 +106,11 @@ public class NavigationDrawerFragment extends Fragment {
         });
 
         mMenuTitles = getResources().getStringArray(R.array.nav_drawer_menu);
-        mIcon = new int[] { R.drawable.action_home2, R.drawable.action_system, R.drawable.action_archive,
-                R.drawable.action_client, R.drawable.action_about, R.drawable.action_about, R.drawable.action_about,
+        mIcon = new int[] { R.drawable.action_home2, R.drawable.action_client,
                 R.drawable.action_about, R.drawable.action_about, R.drawable.action_about };
+        /*mIcon = new int[] { R.drawable.action_home2, R.drawable.action_system, R.drawable.action_archive,
+                R.drawable.action_client, R.drawable.action_about, R.drawable.action_about, R.drawable.action_about,
+                R.drawable.action_about, R.drawable.action_about, R.drawable.action_about };*/
 
         mMenuListAdapter = new MenuListAdapter(getActivity(), mMenuTitles, mIcon);
 
@@ -263,10 +265,10 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
-        if (item.getItemId() == R.id.action_example) {
+        /*if (item.getItemId() == R.id.action_example) {
             Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }

@@ -2,18 +2,20 @@
 <resources>
 
     <string name="app_name">Inforgest</string>
-    <string name="app_description">        IgestMobile is a sales management system, designed for android,
-        in order to facilitate access to the system and solve the problem away from the customer-supplier.</string>
+    <string name="app_description">
+        IgestMobile é um sistema de gestão comercial, desenhado para android,
+        como forma de facilitar o acesso ao sistema e resolver o problema de distância do cliente-fornecedor.
+    </string>
     <string name="dbl_url">www.database.co.mz</string>
-    <string name="igest_welcome">Welcome to InforGest</string>
-    <string name="designed_by">Designed By Banucho Cassamo</string>
-    <string name="title_section1">Home</string>
-    <string name="title_section2">System</string>
-    <string name="title_section3">Archive</string>
-    <string name="title_section4">Client</string>
-    <string name="title_section5">Suppliers</string>
-    <string name="title_section6">Products</string>
-    <string name="title_section7">Treasury</string>
+    <string name="igest_welcome">Bem Vindo ao InforGest</string>
+    <string name="designed_by">Desenhado por Banucho Cassamo</string>
+    <string name="title_section1">Casa</string>
+    <string name="title_section2">Sistema</string>
+    <string name="title_section3">Arquivo</string>
+    <string name="title_section4">Cliente</string>
+    <string name="title_section5">Fornecedores</string>
+    <string name="title_section6">Produtos</string>
+    <string name="title_section7">Tesouraria</string>
     <string name="title_section8">Technical assistence</string>
     <string name="title_section9">Listings</string>
     <string name="title_section10">About</string>
@@ -164,6 +166,5 @@
     <string name="title_activity_new_product_group">NewProductGroupActivity</string>
     <string name="title_activity_type_product_list">TypeProductListActivity</string>
     <string name="title_activity_new_product_type">NewProductTypeActivity</string>
-    <string name="title_activity_client_list">ClientListActivity</string>
 
 </resources>

@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:shrinkColumns="*"
     android:stretchColumns="*"
     android:background="#ffffff">
 
-    <TableRow
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
 
-        <Button
-            android:id="@+id/btnCustomers"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnCustomers" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCustomers"
+        android:id="@+id/btnCustomers"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/igest_color"
+        android:onClick="customerFilesOption"
+        android:layout_marginTop="141dp" />
 
-    </TableRow>
-
-    <TableRow
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/btnCurAccount"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnCurAccount" />
-
-    </TableRow>
-
-</TableLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCurAccount"
+        android:id="@+id/btnCurAccount"
+        android:layout_below="@+id/btnCustomers"
+        android:layout_centerHorizontal="true"
+        android:background="@color/igest_color2"
+        android:onClick="customerFilesOption"
+        android:layout_marginTop="125dp" />
+</RelativeLayout>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mz.com.peach.inforgest" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -68,6 +70,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.TypeProductListActivity" />
+        </activity>
+        <activity
+            android:name=".ClientListActivity"
+            android:label="@string/title_activity_client_list"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.MainActivity" />
         </activity>
     </application>
 
