@@ -164,6 +164,18 @@
     <string name="title_activity_new_product_group">NewProductGroupActivity</string>
     <string name="title_activity_type_product_list">TypeProductListActivity</string>
     <string name="title_activity_new_product_type">NewProductTypeActivity</string>
-    <string name="title_activity_client_list">ClientListActivity</string>
+    <string name="title_activity_client_list">Customer List</string>
+
+    <!-- System Messages -->
+    <string name="error_message">Error loading</string>
+    <string name="load_start">Loading Please Wait...</string>
+    <string name="load_complete">Loading Completed</string>
+    <string name="title_activity_product_list">ProductListActivity</string>
+    <string name="edit">Edit</string>
+    <string name="details">Details</string>
+    <string name="Prices">Prices</string>
+    <string name="title_activity_product">ProductActivity</string>
+    <string name="desig">Description</string>
+    <string name="cod">Code</string>
 
 </resources>

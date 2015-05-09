@@ -170,6 +170,26 @@ public class MainActivity extends ActionBarActivity
         }
     }
 
+    public void productFilesOption(View view){
+        switch (view.getId()) {
+            case R.id.btnProduct:
+                startActivity(new Intent(this, ProductListActivity.class));
+                break;
+            case R.id.btnProdPrices:
+                startActivity(new Intent(this, GroupProductListActivity.class));
+                break;
+            case R.id.btnProdExist:
+                startActivity(new Intent(this, GroupProductListActivity.class));
+                break;
+            case R.id.btnExtraProd:
+                startActivity(new Intent(this, GroupProductListActivity.class));
+                break;
+            case R.id.btnConfWhereHouse:
+                startActivity(new Intent(this, GroupProductListActivity.class));
+                break;
+        }
+    }
+
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);

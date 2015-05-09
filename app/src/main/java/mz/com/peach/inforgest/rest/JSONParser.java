@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import mz.com.peach.inforgest.model.Product;
 import mz.com.peach.inforgest.model.clients.Client;
 
 /**
@@ -53,6 +54,25 @@ public class JSONParser {
         } catch (JSONException e) {
             // TODO Auto-generated catch block
             Log.d("JSONParser => parseClientList", e.getMessage());
+        }
+        return arrayList;
+    }
+
+    public ArrayList<Product> parseProductList(JSONObject object)
+    {
+        ArrayList<Product> arrayList=new ArrayList<Product>();
+        try {
+            JSONArray jsonArray=object.getJSONArray("Value");
+            JSONObject jsonObj=null;
+            for(int i=0;i<jsonArray.length();i++)
+            {
+                jsonObj=jsonArray.getJSONObject(i);
+                arrayList.add(new Product(jsonObj.getString("cod_prod"), jsonObj.getString("desig")));
+            }
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            Log.d("JSONParser => parseProductList", e.getMessage());
         }
         return arrayList;
     }

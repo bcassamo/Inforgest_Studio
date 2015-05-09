@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mz.com.peach.inforgest.helper.DatabaseHelper;
-import mz.com.peach.inforgest.model.Product;
 import mz.com.peach.inforgest.model.archive.ProductFamily;
 import mz.com.peach.inforgest.model.archive.ProductGroup;
 import mz.com.peach.inforgest.model.archive.ProductType;
@@ -37,7 +36,7 @@ public class InforgestDAO {
     }
 
     // Crud for Product
-    public List<Product> listProduct() {
+    /*public List<Product> listProduct() {
         Cursor cursor = getDb().query(DatabaseHelper.Product.TABLE_PRODUCT,
                 DatabaseHelper.Product.COLUMNS, null, null, null, null, null);
         List<Product> products = new ArrayList<Product>();
@@ -48,9 +47,9 @@ public class InforgestDAO {
 
         cursor.close();
         return products;
-    }
+    }*/
 
-    private Product makeProduct(Cursor cursor) {
+    /*private Product makeProduct(Cursor cursor) {
         Product product = new Product(
                 cursor.getLong(cursor.getColumnIndex(DatabaseHelper.Product.COLUMN_ID)),
                 cursor.getLong(cursor.getColumnIndex(DatabaseHelper.Product.COLUMN_FAMILY)),
@@ -59,9 +58,9 @@ public class InforgestDAO {
                 cursor.getString(cursor.getColumnIndex(DatabaseHelper.Product.COLUMN_DESCRIPTION))
         );
         return product;
-    }
+    }*/
 
-    public Product getProductById(Long id){
+    /*public Product getProductById(Long id){
         Cursor cursor = getDb().query(DatabaseHelper.Product.TABLE_PRODUCT, DatabaseHelper.Product.COLUMNS, DatabaseHelper.Product.COLUMN_ID + " = ?", new String[]{id.toString()}, null, null, null);
         if(cursor.moveToNext()){
             Product product = makeProduct(cursor);
@@ -70,9 +69,9 @@ public class InforgestDAO {
         }
 
         return null;
-    }
+    }*/
 
-    public long saveProduct(Product product){
+    /*public long saveProduct(Product product){
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.Product.COLUMN_FAMILY, product.getFamilyId());
         values.put(DatabaseHelper.Product.COLUMN_GROUP, product.getGroupId());
@@ -80,9 +79,9 @@ public class InforgestDAO {
         values.put(DatabaseHelper.Product.COLUMN_DESCRIPTION, product.getDescription());
 
         return getDb().insert(DatabaseHelper.Product.TABLE_PRODUCT, null, values);
-    }
+    }*/
 
-    public long updateProduct(Product product){
+    /*public long updateProduct(Product product){
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.Product.COLUMN_FAMILY, product.getFamilyId());
         values.put(DatabaseHelper.Product.COLUMN_GROUP, product.getGroupId());
@@ -90,15 +89,15 @@ public class InforgestDAO {
         values.put(DatabaseHelper.Product.COLUMN_DESCRIPTION, product.getDescription());
 
         return getDb().update(DatabaseHelper.Product.TABLE_PRODUCT, values, DatabaseHelper.Product.COLUMN_ID + " = ?", new String[]{ product.getId().toString() });
-    }
+    }*/
 
-    public boolean deleteProduct(Long id){
+    /*public boolean deleteProduct(Long id){
         String whereClause = DatabaseHelper.Product.COLUMN_ID + " = ?";
         String[] whereArgs = new String[]{ id.toString() };
         int deleted = getDb().delete(DatabaseHelper.Product.TABLE_PRODUCT, whereClause, whereArgs);
 
         return deleted > 0;
-    }
+    }*/
 
     // End Crud for Product
 

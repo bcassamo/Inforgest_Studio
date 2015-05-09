@@ -79,6 +79,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.MainActivity" />
         </activity>
+        <activity
+            android:name=".ProductListActivity"
+            android:label="@string/title_activity_product_list"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ProductActivity"
+            android:label="@string/title_activity_product"
+            android:parentActivityName=".ProductListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.ProductListActivity" />
+        </activity>
     </application>
 
 </manifest>

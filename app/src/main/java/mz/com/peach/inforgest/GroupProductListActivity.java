@@ -39,6 +39,11 @@ public class GroupProductListActivity extends ActionBarActivity implements Adapt
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista));
 
         //setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista));
+
+        /*if(savedInstanceState == null){
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            Floatin
+        }*/
     }
 
     @Override

@@ -39,7 +39,7 @@ public class ClientListActivity extends ActionBarActivity {
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, data);
         listv.setAdapter(adapter);
-        Toast.makeText(this, "Loading Please Wait..", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.load_start, Toast.LENGTH_SHORT).show();
         new AsyncLoadClientList().execute();
     }
 
@@ -73,7 +73,6 @@ public class ClientListActivity extends ActionBarActivity {
 
         @Override
         protected ArrayList<Client> doInBackground(Void... params) {
-            // TODO Auto-generated method stub
 
             RestAPI api = new RestAPI();
             try {
@@ -85,9 +84,8 @@ public class ClientListActivity extends ActionBarActivity {
                 deptTable = parser.parseClientList(jsonObj);
 
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 Log.d("AsyncLoadClientList", e.getMessage());
-
+                Toast.makeText(context, R.string.error_message,Toast.LENGTH_LONG).show();
             }
 
             return deptTable;
@@ -95,17 +93,15 @@ public class ClientListActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(ArrayList<Client> result) {
-            // TODO Auto-generated method stub
 
-            Toast.makeText(context,"Loading Post",Toast.LENGTH_SHORT).show();
-
+            // itera a lista de clientes para apresentar no listview
             for (int i = 0; i < result.size(); i++) {
-                data.add(result.get(i).getCod_cli() + " " + result.get(i).getNome());
+                data.add((i+1) + " - " + result.get(i).getNome());
             }
 
             adapter.notifyDataSetChanged();
 
-            Toast.makeText(context,"Loading Completed",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, R.string.load_complete,Toast.LENGTH_SHORT).show();
         }
 
     }
