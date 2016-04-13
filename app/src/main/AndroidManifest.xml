@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mz.com.peach.inforgest" >
+    package="mz.com.peach.inforgest">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,15 +8,14 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Inforgest" >
+        android:theme="@style/Theme.Inforgest">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".SplashScreenActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +25,7 @@
         <activity
             android:name=".FamilyProductListActivity"
             android:label="@string/title_activity_family_product_list"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.MainActivity" />
@@ -34,7 +33,7 @@
         <activity
             android:name=".NewProductFamilyActivity"
             android:label="@string/title_activity_new_product_family"
-            android:parentActivityName=".FamilyProductListActivity" >
+            android:parentActivityName=".FamilyProductListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.FamilyProductListActivity" />
@@ -42,7 +41,7 @@
         <activity
             android:name=".GroupProductListActivity"
             android:label="@string/title_activity_group_product_list"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.MainActivity" />
@@ -50,7 +49,7 @@
         <activity
             android:name=".NewProductGroupActivity"
             android:label="@string/title_activity_new_product_group"
-            android:parentActivityName=".GroupProductListActivity" >
+            android:parentActivityName=".GroupProductListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.GroupProductListActivity" />
@@ -58,7 +57,7 @@
         <activity
             android:name=".TypeProductListActivity"
             android:label="@string/title_activity_type_product_list"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.MainActivity" />
@@ -66,7 +65,7 @@
         <activity
             android:name=".NewProductTypeActivity"
             android:label="@string/title_activity_new_product_type"
-            android:parentActivityName=".TypeProductListActivity" >
+            android:parentActivityName=".TypeProductListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.TypeProductListActivity" />
@@ -74,7 +73,7 @@
         <activity
             android:name=".ClientListActivity"
             android:label="@string/title_activity_client_list"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.MainActivity" />
@@ -82,7 +81,7 @@
         <activity
             android:name=".ProductListActivity"
             android:label="@string/title_activity_product_list"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.MainActivity" />
@@ -90,11 +89,12 @@
         <activity
             android:name=".ProductActivity"
             android:label="@string/title_activity_product"
-            android:parentActivityName=".ProductListActivity" >
+            android:parentActivityName=".ProductListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.ProductListActivity" />
         </activity>
+        <activity android:name=".ClientDetailActivity"></activity>
     </application>
 
 </manifest>

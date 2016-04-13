@@ -49,6 +49,24 @@ public class ProductListActivity extends ActionBarActivity {
 
         Toast.makeText(this, R.string.load_start, Toast.LENGTH_SHORT).show();
         new AsyncLoadProductList().execute();
+
+
+        /*listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String selected = ((TextView)view).getText().toString();
+
+                String a = selected.split("-").toString();
+
+                Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
+
+                Toast toast = Toast.makeText(getApplicationContext(), a, Toast.LENGTH_LONG);
+                toast.show();
+                intent.putExtra("cod_prod", selected);
+                startActivity(intent);
+            }
+        });*/
     }
 
     @Override
@@ -57,6 +75,8 @@ public class ProductListActivity extends ActionBarActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_context_product_list, menu);
     }
+
+
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -75,13 +95,13 @@ public class ProductListActivity extends ActionBarActivity {
                 return super.onContextItemSelected(item);
         }
     }
-
     private void detailsProduct(long id){
+        String a = (String) listv.getItemAtPosition((int)id);
+        String [] b = a.split(" - ", 2);
 
-        String a =  ""+id;
-
-        Toast.makeText(context, a,Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, b[1],Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, ProductActivity.class);
+        intent.putExtra("desig", b[1]);
         startActivity(intent);
     }
 

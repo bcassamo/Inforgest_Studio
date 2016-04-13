@@ -8,31 +8,157 @@
 
     <TextView android:text="@string/cod" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtCod" />
+        android:id="@+id/txtcod" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtcod"
+        android:layout_below="@+id/txtcod"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView android:text="@string/desig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtdesig"
+        android:layout_alignTop="@+id/txtcod"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/edttxtcod" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtdesig"
+        android:layout_alignTop="@+id/edttxtcod"
+        android:layout_alignRight="@+id/txtdesig" />
+
+
+    <TextView android:text="@string/upc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtUPC"
+        android:layout_below="@+id/edttxtcod"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtupc"
+        android:layout_below="@+id/txtUPC"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:text="@string/pmc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPMC"
+        android:layout_above="@+id/edttxtupc"
+        android:layout_alignRight="@+id/txtdesig"
+        android:layout_alignEnd="@+id/txtdesig" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtpmc"
+        android:layout_below="@+id/txtPMC"
+        android:layout_alignParentRight="true" />
+
+    <TextView android:text="@string/pmv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtPMV"
+        android:layout_below="@+id/edttxtpmc"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtpmv"
+        android:layout_below="@+id/txtPMV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:text="@string/p2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtp2"
+        android:layout_above="@+id/edttxtpmv"
+        android:layout_alignRight="@+id/txtdesig"
+        android:layout_alignEnd="@+id/txtdesig" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtp2"
+        android:layout_below="@+id/txtp2"
+        android:layout_alignParentRight="true" />
+
+    <TextView android:text="@string/p3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtp3"
+        android:layout_below="@+id/edttxtp2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtp3"
+        android:layout_below="@+id/txtp3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:text="@string/p4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtp4"
+        android:layout_above="@+id/edttxtp3"
+        android:layout_alignRight="@+id/txtdesig"
+        android:layout_alignEnd="@+id/txtdesig" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtp4"
+        android:layout_below="@+id/txtp4"
+        android:layout_alignParentRight="true" />
+
+    <TextView android:text="@string/spec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtspec"
+        android:layout_below="@+id/edttxtp3"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextCod"
-        android:layout_below="@+id/txtCod"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/edttxtspec"
+        android:layout_below="@+id/txtspec"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/txtCod"
-        android:layout_alignEnd="@+id/txtCod" />
+        android:layout_alignRight="@+id/txtp4"
+        android:layout_alignEnd="@+id/txtp4" />
 
-    <TextView android:text="@string/desig" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtDesig"
-        android:layout_alignTop="@+id/txtCod"
-        android:layout_alignParentRight="true"
-        android:layout_above="@+id/editTextCod" />
-
-    <EditText
+    <TextView android:text="@string/btnProdExist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_alignTop="@+id/editTextCod"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/txtexist"
+        android:layout_below="@+id/edttxtspec"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edttxtexist"
+        android:layout_below="@+id/txtexist"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

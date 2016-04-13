@@ -177,5 +177,13 @@
     <string name="Prices">Preços</string>
     <string name="desig">Description</string>
     <string name="cod">Code</string>
+    <string name="upc">U.P.C:</string>
+    <string name="pmc">P.M.C:</string>
+    <string name="pmv">P.M.V:</string>
+    <string name="p2">P2:</string>
+    <string name="p3">P3:</string>
+    <string name="p4">P4:</string>
+    <string name="spec">Especificações:</string>
+    <string name="text_balance">Saldo</string>
 
 </resources>

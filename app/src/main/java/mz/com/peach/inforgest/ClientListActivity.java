@@ -1,14 +1,18 @@
 package mz.com.peach.inforgest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -20,7 +24,7 @@ import mz.com.peach.inforgest.rest.JSONParser;
 import mz.com.peach.inforgest.rest.RestAPI;
 
 
-public class ClientListActivity extends ActionBarActivity {
+public class ClientListActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
 
     ArrayAdapter<String> adapter;
     ListView listv;
@@ -39,6 +43,7 @@ public class ClientListActivity extends ActionBarActivity {
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, data);
         listv.setAdapter(adapter);
+        listv.setOnItemClickListener(this);
         Toast.makeText(this, R.string.load_start, Toast.LENGTH_SHORT).show();
         new AsyncLoadClientList().execute();
     }
@@ -64,6 +69,15 @@ public class ClientListActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        TextView textView = (TextView) view;
+        String mensagem = (String) textView.getText();
+        Toast.makeText(getApplicationContext(), mensagem,
+                Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, ClientDetailActivity.class));
     }
 
 

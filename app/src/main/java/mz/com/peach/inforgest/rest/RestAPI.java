@@ -23,7 +23,7 @@ import java.util.Map;
  * Created by peach on 2/18/15.
  */
 public class RestAPI {
-    private final String urlString = "http://192.168.43.246/InforgestRestAPI/Handler1.ashx";
+    private final String urlString = "http://192.168.43.172/IgestRestAPI/Handler1.ashx";
 
     private static String convertStreamToUTF8String(InputStream stream) throws IOException {
         String result = "";
@@ -115,12 +115,39 @@ public class RestAPI {
         return result;
     }
 
+    public JSONObject GetClientCurrentAccount() throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetClientCurrentAccount");
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
     public JSONObject GetProductList() throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
         JSONObject p = new JSONObject();
         o.put("interface","RestAPI");
         o.put("method", "GetProductList");
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
+    public JSONObject GetProductDetails(String desig) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetProductDetails");
+        p.put("desig",mapObject(desig));
         o.put("parameters", p);
         String s = o.toString();
         String r = load(s);

@@ -76,4 +76,23 @@ public class JSONParser {
         }
         return arrayList;
     }
+
+    public Product parseProductDetails(JSONObject object)
+    {
+        Product productDetail=new Product();
+
+        try {
+            JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
+
+            productDetail.setCod_prod(jsonObj.getString("cod_prod"));
+            productDetail.setDesig(jsonObj.getString("desig"));
+
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            Log.d("JSONParser => parseProductDetails", e.getMessage());
+        }
+
+        return productDetail;
+
+    }
 }

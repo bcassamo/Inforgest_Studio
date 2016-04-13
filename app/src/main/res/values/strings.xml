@@ -67,6 +67,13 @@
         <item>Baskets</item>
     </string-array>
 
+
+    <!-- For another layout -->
+    <string name="files_customers">Files and Customers</string>
+    <string name="documents">Documents</string>
+    <string name="baskets">Baskets</string>
+
+
     <!-- Listings tab titles -->
     <string-array name="listings_tab_titles">
         <item>Customers</item>
@@ -80,9 +87,14 @@
     <string-array name="product_tab_titles">
         <item>Files and Products</item>
         <item>Acerto de Stock</item>
-        <item>Inventário</item>
+        <item>Inventory</item>
         <item>Other</item>
     </string-array>
+
+    <string name="files_products">Files and Products</string>
+    <string name="acerto_stock">Stock Settlement</string>
+    <string name="inventory">Inventory</string>
+    <string name="other">Other</string>
 
     <!-- Supplier tab titles -->
     <string-array name="supplier_tab_titles">
@@ -144,7 +156,7 @@
     <string name="btnProdSearchinventory">Search Inventory</string>
 
     <!-- Product Settlement Stock -->
-    <string name="btnProdSetStock">Settlement of Stock</string>
+    <string name="btnProdSetStock">Settlement Stock</string>
     <string name="btnProdsearchSettl">Search Settlement</string>
 
     <!-- Supplier Buttons Menu -->
@@ -177,5 +189,13 @@
     <string name="title_activity_product">ProductActivity</string>
     <string name="desig">Description</string>
     <string name="cod">Code</string>
+    <string name="upc">U.P.C:</string>
+    <string name="pmc">P.M.C:</string>
+    <string name="pmv">P.M.V:</string>
+    <string name="p2">P2:</string>
+    <string name="p3">P3:</string>
+    <string name="p4">P4:</string>
+    <string name="spec">Specifications:</string>
+    <string name="text_balance">Balance</string>
 
 </resources>

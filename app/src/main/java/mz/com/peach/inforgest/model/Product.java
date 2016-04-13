@@ -10,7 +10,7 @@ public class Product {
     private Calendar data_reg, data_mod;
     private int activo, cstock, vnegativo, id_prodtipo, id_prodgrp,
     id_prodfam, iva_icl, id_moeda, n1, n2, frac_qty, uni_cx, onlybarcode,
-    composto;
+    composto, exist;
     private double nstk_min, iva_compra, iva_venda, pvp_uni, margem_uni,
     renta_uni, pvp_cx, margem_cx, renta_cx, pvp_n1, margem_n1, renta_n1,
     pvp_n2, margem_n2, renta_n2, upc, pmc, pmv, p2, m2, p3, m3, p4, m4;
@@ -18,9 +18,18 @@ public class Product {
     public Product() {
     }
 
+    public int getExist() {
+        return exist;
+    }
+
+    public void setExist(int exist) {
+        this.exist = exist;
+    }
+
     public Product(String cod_prod, String desig) {
         this.cod_prod = cod_prod;
         this.desig = desig;
+
     }
 
     public String getCod_prod() {

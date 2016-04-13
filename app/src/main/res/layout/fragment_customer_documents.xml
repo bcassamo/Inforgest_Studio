@@ -1,65 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:shrinkColumns="*"
-    android:stretchColumns="*">
+    android:padding="60dp" >
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center" >
+    <Button
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:id="@+id/btnProForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/igest_color"
+        android:text="@string/btnProForm" />
 
-        <Button
-            android:id="@+id/btnProForm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnProForm" />
+    <Button
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:id="@+id/btnInvoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/igest_color"
+        android:text="@string/btnInvoice" />
 
-        <Button
-            android:id="@+id/btnInvoice"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnInvoice" />
-    </TableRow>
+    <Button
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="27dp"
+        android:paddingRight="27dp"
+        android:id="@+id/btnCashSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:background="@color/igest_color"
+        android:text="@string/btnCashSale" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center" >
+    <Button
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:id="@+id/btnCustSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/igest_color"
+        android:text="@string/btnCustSearch" />
 
-        <Button
-            android:id="@+id/btnCashSale"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnCashSale" />
 
-        <Button
-            android:id="@+id/btnCustSearch"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnCustSearch" />
-    </TableRow>
+    <Button
+        android:padding="8dp"
+        android:id="@+id/btnDelGuides"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/igest_color"
+        android:text="@string/btnDelGuides" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center" >
+    <Button
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:id="@+id/btnDebitNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/igest_color"
+        android:text="@string/btnDebitNote" />
 
-        <Button
-            android:id="@+id/btnDelGuides"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnDelGuides" />
-
-        <Button
-            android:id="@+id/btnDebitNote"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/btnDebitNote" />
-    </TableRow>
-
-</TableLayout>
+</RelativeLayout>
