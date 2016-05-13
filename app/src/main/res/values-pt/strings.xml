@@ -4,9 +4,10 @@
     <string name="app_name">Inforgest</string>
     <string name="app_description">
         IgestMobile é um sistema de gestão comercial, desenhado para android,
-        como forma de facilitar o acesso ao sistema e resolver o problema de distância do cliente-fornecedor.
+        com o objectivo de eliminar a necessidade de estar na empresa para ter acesso a informação comercial.
     </string>
     <string name="dbl_url">www.database.co.mz</string>
+    <string name="welcome">Bem-Vindo</string>
     <string name="igest_welcome">Bem Vindo ao InforGest</string>
     <string name="designed_by">Desenhado por Banucho Cassamo</string>
     <string name="title_section1">Casa</string>
@@ -16,7 +17,7 @@
     <string name="title_section5">Fornecedores</string>
     <string name="title_section6">Produtos</string>
     <string name="title_section7">Tesouraria</string>
-    <string name="title_section8">Technical assistence</string>
+    <string name="title_section8">Assistência Técnica</string>
     <string name="title_section9">Listings</string>
     <string name="title_section10">About</string>
 
@@ -35,7 +36,7 @@
     <!-- Hints -->
     <string name="write_a_product_type">Escreva o nome do tipo de produto</string>
     <string name="write_a_product_group">Escreva o nome do grupo</string>
-    <string name="write_a_product_family">Escreva o nome da familia</string>
+    <string name="write_a_product_family">Escreva o nome da família</string>
 
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
@@ -69,6 +70,11 @@
         <item>Cabazes</item>
     </string-array>
 
+    <!-- For another layout -->
+    <string name="files_customers">Ficheiro de Clientes</string>
+    <string name="documents">Documentos</string>
+    <string name="baskets">Cabazes</string>
+
     <!-- Listings tab titles -->
     <string-array name="listings_tab_titles">
         <item>Clientes</item>
@@ -80,31 +86,36 @@
 
     <!-- Product tab titles -->
     <string-array name="product_tab_titles">
-        <item>Files and Products</item>
+        <item>Ficheiro de Produtos</item>
         <item>Acerto de Stock</item>
         <item>Inventário</item>
-        <item>Other</item>
+        <item>Outros</item>
     </string-array>
+
+    <string name="files_products">Ficheiro de Produtos</string>
+    <string name="acerto_stock">Acerto de Stock</string>
+    <string name="inventory">Inventário</string>
+    <string name="other">Outros</string>
 
     <!-- Supplier tab titles -->
     <string-array name="supplier_tab_titles">
         <item>Files and Supplier</item>
-        <item>Documents</item>
+        <item>Documentos</item>
         <item>Orders</item>
     </string-array>
 
     <!-- Archieve Butons Menu -->
     <!-- Paramentrization Buttons -->
-    <string name="btnFamily">Familia</string>
+    <string name="btnFamily">Família</string>
     <string name="btnGroups">Grupos</string>
-    <string name="btnTypOfProd">Tipo de Produtos  </string>
-    <string name="btnCurUnit">    Currency Unit   </string>
-    <string name="title_activity_group_form">Product Groups</string>
-    <string name="title_activity_currency_unit">Currency</string>
+    <string name="btnTypOfProd">Tipo de Produtos</string>
+    <string name="btnCurUnit">Unidade de moedas</string>
+    <string name="title_activity_group_form">Grupos de productos</string>
+    <string name="title_activity_currency_unit">Moeda</string>
 
     <!-- Entity Buttons -->
-    <string name="btnWareHouse">WareHouse</string>
-    <string name="btnSellers">Sellers</string>
+    <string name="btnWareHouse">Armazém</string>
+    <string name="btnSellers">Vendedores</string>
     <string name="btnTypeOfClient">Type Of Client</string>
     <string name="btnCurrency">Currency</string>
     <string name="btnExchange">Exchange</string>
@@ -137,12 +148,12 @@
     <!-- Product Files Buttons -->
     <string name="btnProduct">Produtos</string>
     <string name="btnProdPrices">Preços</string>
-    <string name="btnProdExist">Existencias</string>
+    <string name="btnProdExist">Existências</string>
     <string name="btnExtraProd">Extracto de Produtos</string>
-    <string name="btnConfWhereHouse">Confi. em Armazens</string>
+    <string name="btnConfWhereHouse">Confi. em Armazéns</string>
 
     <!-- Product Inventory Buttons -->
-    <string name="btnProdInventory">Inventario</string>
+    <string name="btnProdInventory">Inventário</string>
     <string name="btnProdSearchinventory">Search Inventory</string>
 
     <!-- Product Settlement Stock -->
@@ -160,13 +171,14 @@
     <!-- Supplier Documents Buttons -->
     <string name="btnEntInStock">Entry into Stock</string>
     <string name="btnSuppSearch">Search</string>
-    <string name="title_activity_family_product_list">FamilyProductList</string>
+    <string name="title_activity_family_product_list">Família de Productos</string>
     <string name="title_activity_new_product_family">NewProductFamilyActivity</string>
     <string name="title_activity_group_product_list">GroupProductListActivity</string>
     <string name="title_activity_new_product_group">NewProductGroupActivity</string>
     <string name="title_activity_type_product_list">TypeProductListActivity</string>
     <string name="title_activity_new_product_type">NewProductTypeActivity</string>
     <string name="title_activity_client_list">Lista de Clientes</string>
+    <string name="title_activity_client_details">Detalhes do Cliente</string>
 
     <!-- System Messages -->
     <string name="error_message">Erro ao Carregar</string>
@@ -185,5 +197,6 @@
     <string name="p4">P4:</string>
     <string name="spec">Especificações:</string>
     <string name="text_balance">Saldo</string>
+    <string name="action_code">Código</string>
 
 </resources>

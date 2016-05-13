@@ -106,8 +106,8 @@ public class NavigationDrawerFragment extends Fragment {
         });
 
         mMenuTitles = getResources().getStringArray(R.array.nav_drawer_menu);
-        mIcon = new int[] { R.drawable.action_home2, R.drawable.action_client,
-                R.drawable.action_about, R.drawable.action_about, R.drawable.action_about };
+        mIcon = new int[] { R.drawable.action_home, R.drawable.action_customer,
+                R.drawable.action_shopping_basket, R.drawable.action_business, R.drawable.action_info };
         /*mIcon = new int[] { R.drawable.action_home2, R.drawable.action_system, R.drawable.action_archive,
                 R.drawable.action_client, R.drawable.action_about, R.drawable.action_about, R.drawable.action_about,
                 R.drawable.action_about, R.drawable.action_about, R.drawable.action_about };*/

@@ -5,6 +5,7 @@ package mz.com.peach.inforgest.model.clients;
  */
 public class Client {
     private String cod_cli, nome;
+    private double saldo;
 //    private int activo, id_cidade, id_pc, id_pf, ctr_credito,
 //            ctr_docvalidade, limite_valor, desc_come, id_vend,
 //            id_moeda, saldo_global, tipo_preco, externo;
@@ -34,5 +35,13 @@ public class Client {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 }

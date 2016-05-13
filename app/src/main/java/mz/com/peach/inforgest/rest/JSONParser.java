@@ -20,25 +20,6 @@ public class JSONParser {
         super();
     }
 
-    /*public ArrayList<ProductFamily> parseProductFamilyList(JSONObject object)
-    {
-        ArrayList<ProductFamily> arrayList=new ArrayList<ProductFamily>();
-        try {
-            JSONArray jsonArray=object.getJSONArray("Value");
-            JSONObject jsonObj=null;
-            for(int i=0;i<jsonArray.length();i++)
-            {
-                jsonObj=jsonArray.getJSONObject(i);
-                arrayList.add(new ProductFamily(jsonObj.getLong("id_prodfam"), jsonObj.getString("desig")));
-            }
-
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            Log.d("JSONParser => parseProductFamilyList", e.getMessage());
-        }
-        return arrayList;
-    }*/
-
     public ArrayList<Client> parseClientList(JSONObject object)
     {
         ArrayList<Client> arrayList=new ArrayList<Client>();
@@ -52,10 +33,38 @@ public class JSONParser {
             }
 
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            Log.d("JSONParser => parseClientList", e.getMessage());
+            Log.d("ParseClientList =>", e.getMessage());
         }
         return arrayList;
+    }
+
+    public Client parseClientDetails(JSONObject object){
+        Client client = new Client();
+        try {
+            JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
+
+            client.setCod_cli(jsonObj.getString("cod_cli"));
+            client.setNome(jsonObj.getString("nome"));
+            client.setSaldo(jsonObj.getDouble("saldo"));
+        } catch (JSONException e) {
+            Log.d("ParseClientDetails =>", e.getMessage());
+        }
+
+        return client;
+    }
+
+    public Client parseClientCode(JSONObject object){
+        Client client = new Client();
+        try {
+            JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
+
+            client.setCod_cli(jsonObj.getString("cod_cli"));
+            client.setNome(jsonObj.getString("nome"));
+        } catch (JSONException e) {
+            Log.d("ParseClientDetails =>", e.getMessage());
+        }
+
+        return client;
     }
 
     public ArrayList<Product> parseProductList(JSONObject object)
@@ -72,7 +81,7 @@ public class JSONParser {
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block
-            Log.d("JSONParser => parseProductList", e.getMessage());
+            Log.d("ParseProductList =>", e.getMessage());
         }
         return arrayList;
     }
@@ -89,7 +98,7 @@ public class JSONParser {
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block
-            Log.d("JSONParser => parseProductDetails", e.getMessage());
+            Log.d("ParseProductDetails =>", e.getMessage());
         }
 
         return productDetail;

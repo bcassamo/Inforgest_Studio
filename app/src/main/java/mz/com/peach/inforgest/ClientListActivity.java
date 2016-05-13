@@ -26,6 +26,7 @@ import mz.com.peach.inforgest.rest.RestAPI;
 
 public class ClientListActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
 
+    public final static String EXTRA_MESSAGE = "mz.com.peach.inforgest.MESSAGE";
     ArrayAdapter<String> adapter;
     ListView listv;
     Context context;
@@ -44,7 +45,7 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
                 android.R.layout.simple_list_item_1, data);
         listv.setAdapter(adapter);
         listv.setOnItemClickListener(this);
-        Toast.makeText(this, R.string.load_start, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, R.string.load_start, Toast.LENGTH_SHORT).show();
         new AsyncLoadClientList().execute();
     }
 
@@ -74,16 +75,18 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TextView textView = (TextView) view;
-        String mensagem = (String) textView.getText();
-        Toast.makeText(getApplicationContext(), mensagem,
+        String message = (String) textView.getText().subSequence(4, textView.getText().length());
+        Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, ClientDetailActivity.class));
+        Intent intent = new Intent(context, ClientDetailActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 
 
     protected class AsyncLoadClientList extends
             AsyncTask<Void, JSONObject, ArrayList<Client>> {
-        ArrayList<Client> deptTable = null;
+        ArrayList<Client> clientList = null;
 
         @Override
         protected ArrayList<Client> doInBackground(Void... params) {
@@ -95,14 +98,14 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
 
                 JSONParser parser = new JSONParser();
 
-                deptTable = parser.parseClientList(jsonObj);
+                clientList = parser.parseClientList(jsonObj);
 
             } catch (Exception e) {
                 Log.d("AsyncLoadClientList", e.getMessage());
                 Toast.makeText(context, R.string.error_message,Toast.LENGTH_LONG).show();
             }
 
-            return deptTable;
+            return clientList;
         }
 
         @Override

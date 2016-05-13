@@ -11,7 +11,12 @@
         android:theme="@style/Theme.Inforgest">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.MainActivity" />
+        </activity>
         <activity
             android:name=".SplashScreenActivity"
             android:label="@string/app_name"
@@ -72,11 +77,7 @@
         </activity>
         <activity
             android:name=".ClientListActivity"
-            android:label="@string/title_activity_client_list"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="mz.com.peach.inforgest.MainActivity" />
+            android:label="@string/title_activity_client_list">
         </activity>
         <activity
             android:name=".ProductListActivity"
@@ -94,7 +95,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.ProductListActivity" />
         </activity>
-        <activity android:name=".ClientDetailActivity"></activity>
+        <activity
+            android:name=".ClientDetailActivity"
+            android:label="@string/title_activity_client_details"
+            android:parentActivityName=".ClientListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.ClientListActivity" />
+        </activity>
     </application>
 
 </manifest>
