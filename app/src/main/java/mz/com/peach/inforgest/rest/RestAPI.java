@@ -156,13 +156,13 @@ public class RestAPI {
         return result;
     }
 
-    public JSONObject GetProductDetails(String desig) throws Exception {
+    public JSONObject GetProductDetails(String designation) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
         JSONObject p = new JSONObject();
         o.put("interface","RestAPI");
         o.put("method", "GetProductDetails");
-        p.put("desig",mapObject(desig));
+        p.put("designation",mapObject(designation));
         o.put("parameters", p);
         String s = o.toString();
         String r = load(s);

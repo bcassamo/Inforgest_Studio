@@ -26,7 +26,7 @@ import mz.com.peach.inforgest.rest.RestAPI;
 
 public class ClientListActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
 
-    public final static String EXTRA_MESSAGE = "mz.com.peach.inforgest.MESSAGE";
+    public final static String CLIENT_EXTRA_MESSAGE = "mz.com.peach.inforgest.CLIENT_MESSAGE";
     ArrayAdapter<String> adapter;
     ListView listv;
     Context context;
@@ -79,7 +79,7 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(context, ClientDetailActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra(CLIENT_EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 

@@ -80,7 +80,6 @@ public class JSONParser {
             }
 
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             Log.d("ParseProductList =>", e.getMessage());
         }
         return arrayList;
@@ -88,16 +87,21 @@ public class JSONParser {
 
     public Product parseProductDetails(JSONObject object)
     {
-        Product productDetail=new Product();
+        Product productDetail = new Product();
 
         try {
             JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
 
             productDetail.setCod_prod(jsonObj.getString("cod_prod"));
-            productDetail.setDesig(jsonObj.getString("desig"));
+            productDetail.setDesignation(jsonObj.getString("designation"));
+            productDetail.setSpecification(jsonObj.getString("specification"));
+            productDetail.setPvp_uni(jsonObj.getDouble("pvp_uni"));
+            productDetail.setIva(jsonObj.getDouble("iva"));
+            productDetail.setPvp_iva(jsonObj.getDouble("pvp_iva"));
+            productDetail.setStk_prev(jsonObj.getInt("stk_prev"));
+            productDetail.setUni_cx(jsonObj.getInt("uni_cx"));
 
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             Log.d("ParseProductDetails =>", e.getMessage());
         }
 

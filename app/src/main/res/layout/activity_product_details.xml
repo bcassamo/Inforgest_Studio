@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_vertical_margin"
+        tools:context="mz.com.peach.inforgest.ProductDetailsActivity">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/action_code"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:textAllCaps="true"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/action_desig"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsDesignation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:textAllCaps="true"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/action_specification"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsSpecification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:textAllCaps="true"
+                android:textSize="16dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/txt_price"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/txt_iva"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsIva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:inputType="numberDecimal"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/txt_total"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:inputType="numberDecimal"
+                android:textSize="30dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/txt_quantity"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:inputType="number"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/txt_box_unity"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/txtProductDetailsboxunity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/igest_color"
+                android:inputType="number"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>

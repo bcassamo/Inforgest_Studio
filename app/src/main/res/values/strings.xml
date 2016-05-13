@@ -181,6 +181,7 @@
     <string name="title_activity_new_product_type">NewProductTypeActivity</string>
     <string name="title_activity_client_list">Customer List</string>
     <string name="title_activity_client_details">Client Details</string>
+    <string name="title_activity_product_details">Product Details</string>
 
     <!-- System Messages -->
     <string name="error_message">Error loading</string>
@@ -190,6 +191,7 @@
     <string name="edit">Edit</string>
     <string name="details">Details</string>
     <string name="Prices">Prices</string>
+    <string name="txt_price">Price</string>
     <string name="title_activity_product">ProductActivity</string>
     <string name="desig">Description</string>
     <string name="cod">Code</string>
@@ -202,6 +204,12 @@
     <string name="spec">Specifications:</string>
     <string name="text_balance">Balance</string>
     <string name="action_code">Code</string>
+    <string name="action_desig">Designation</string>
+    <string name="action_specification">Specification</string>
+    <string name="txt_iva">IVA</string>
+    <string name="txt_total">Total</string>
+    <string name="txt_quantity">Quantity</string>
+    <string name="txt_box_unity">Unity/Box</string>
 
 
 </resources>

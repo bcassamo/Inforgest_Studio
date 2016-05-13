@@ -11,9 +11,20 @@
         android:text="@string/files_products"
         android:textAllCaps="true" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:padding="16dp"
+            android:id="@+id/btnProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="productFilesOption"
+            android:text="@string/btnProduct" />
 
         <LinearLayout
             android:id="@+id/linear_files_products"
@@ -21,53 +32,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <LinearLayout
+            <Button
+                android:padding="8dp"
+                android:id="@+id/btnProdExist"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:text="@string/btnProdExist" />
 
-                <Button
-                    android:padding="8dp"
-                    android:id="@+id/btnProduct"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="productFilesOption"
-                    android:text="@string/btnProduct" />
-
-
-                <Button
-                    android:padding="8dp"
-                    android:id="@+id/btnProdExist"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/btnProdExist" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <Button
+                android:padding="8dp"
+                android:id="@+id/btnExtraProd"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
-
-                <Button
-                    android:padding="8dp"
-                    android:id="@+id/btnProdPrices"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="onBtnGroupClick"
-                    android:text="@string/btnProdPrices" />
-
-                <Button
-                    android:padding="8dp"
-                    android:id="@+id/btnExtraProd"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="onBtnCurUnitClick"
-                    android:text="@string/btnExtraProd" />
-
-            </LinearLayout>
+                android:onClick="onBtnCurUnitClick"
+                android:text="@string/btnExtraProd" />
         </LinearLayout>
 
         <Button
@@ -75,11 +55,10 @@
             android:id="@+id/btnConfWhereHouse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linear_files_products"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
             android:text="@string/btnConfWhereHouse" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"

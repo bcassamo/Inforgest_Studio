@@ -97,7 +97,7 @@ public class ProductActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(Product result) {
             cod_prod.setText(result.getCod_prod());
-            desig.setText(result.getDesig());
+            desig.setText(result.getDesignation());
             upc.setText((int) result.getUpc());
             /*pmc.setText((int) result.getPmc());
             pmv.setText((int) result.getPmv());

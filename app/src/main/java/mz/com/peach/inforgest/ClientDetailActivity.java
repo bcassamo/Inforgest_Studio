@@ -25,12 +25,12 @@ public class ClientDetailActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_detail);
         context = this;
-        code = (TextView) findViewById(R.id.txtCode);
-        name = (TextView) findViewById(R.id.txtName);
-        balance = (TextView) findViewById(R.id.txtBalance);
+        code = (TextView) findViewById(R.id.txtCliDetCode);
+        name = (TextView) findViewById(R.id.txtCliDetName);
+        balance = (TextView) findViewById(R.id.txtCliDetBalance);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(ClientListActivity.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(ClientListActivity.CLIENT_EXTRA_MESSAGE);
         new AsyncClientDetails().execute(message);
     }
 
@@ -45,7 +45,7 @@ public class ClientDetailActivity extends ActionBarActivity {
             try {
                 JSONParser parser = new JSONParser();
                 JSONObject jsonObj = api.GetClientDetais(params[0]);
-                // executa apenas se GetClientDetais não retorna objectos
+                // executa apenas se GetClientDetails não retorna objectos
                 if(jsonObj.getJSONArray("Value").length() == 0) {
                     jsonObj = api.GetClientCode(params[0]);
                     clientTable = parser.parseClientCode(jsonObj);

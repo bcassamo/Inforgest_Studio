@@ -14,28 +14,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <Button
-            android:padding="8dp"
-            android:layout_width="0dp"
+            android:padding="12dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
             android:text="@string/btnCustomers"
             android:id="@+id/btnCustomers"
-            android:onClick="customerFilesOption" />
-
-        <View
-            android:layout_width="16dp"
-            android:layout_height="match_parent"/>
-
-        <Button
-            android:padding="8dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/btnCurAccount"
-            android:id="@+id/btnCurAccount"
             android:onClick="customerFilesOption" />
 
     </LinearLayout>

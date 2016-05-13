@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -25,8 +26,9 @@ import mz.com.peach.inforgest.rest.JSONParser;
 import mz.com.peach.inforgest.rest.RestAPI;
 
 
-public class ProductListActivity extends ActionBarActivity {
+public class ProductListActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
 
+    public final static String PRODUCT_EXTRA_MESSAGE = "mz.com.peach.inforgest.PRODUCT_MESSAGE";
     ArrayAdapter<String> adapter;
     ListView listv;
     Context context;
@@ -44,41 +46,23 @@ public class ProductListActivity extends ActionBarActivity {
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, data);
         listv.setAdapter(adapter);
-
-        registerForContextMenu(listv);
+        listv.setOnItemClickListener(this);
+        /*registerForContextMenu(listv);*/
 
         Toast.makeText(this, R.string.load_start, Toast.LENGTH_SHORT).show();
         new AsyncLoadProductList().execute();
-
-
-        /*listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                String selected = ((TextView)view).getText().toString();
-
-                String a = selected.split("-").toString();
-
-                Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
-
-                Toast toast = Toast.makeText(getApplicationContext(), a, Toast.LENGTH_LONG);
-                toast.show();
-                intent.putExtra("cod_prod", selected);
-                startActivity(intent);
-            }
-        });*/
     }
 
-    @Override
+    /*@Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_context_product_list, menu);
-    }
+    }*/
 
 
 
-    @Override
+    /*@Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
@@ -103,7 +87,7 @@ public class ProductListActivity extends ActionBarActivity {
         Intent intent = new Intent(this, ProductActivity.class);
         intent.putExtra("desig", b[1]);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -127,9 +111,19 @@ public class ProductListActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        TextView textView = (TextView) view;
+        String message = (String) textView.getText().subSequence(4, textView.getText().length());
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(context, ProductDetailsActivity.class);
+        intent.putExtra(PRODUCT_EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
     protected class AsyncLoadProductList extends
             AsyncTask<Void, JSONObject, ArrayList<Product>> {
-        ArrayList<Product> deptTable = null;
+        ArrayList<Product> productList = null;
 
         @Override
         protected ArrayList<Product> doInBackground(Void... params) {
@@ -141,14 +135,14 @@ public class ProductListActivity extends ActionBarActivity {
 
                 JSONParser parser = new JSONParser();
 
-                deptTable = parser.parseProductList(jsonObj);
+                productList = parser.parseProductList(jsonObj);
 
             } catch (Exception e) {
                 Log.d("AsyncLoadProductList", e.getMessage());
                 Toast.makeText(context, R.string.error_message,Toast.LENGTH_LONG).show();
             }
 
-            return deptTable;
+            return productList;
         }
 
         @Override
@@ -156,7 +150,7 @@ public class ProductListActivity extends ActionBarActivity {
 
             // itera a lista de produtos para apresentar no listview
             for (int i = 0; i < result.size(); i++) {
-                data.add((i+1) + " - " + result.get(i).getDesig());
+                data.add((i+1) + " - " + result.get(i).getDesignation());
             }
 
             adapter.notifyDataSetChanged();

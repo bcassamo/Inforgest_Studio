@@ -179,15 +179,17 @@
     <string name="title_activity_new_product_type">NewProductTypeActivity</string>
     <string name="title_activity_client_list">Lista de Clientes</string>
     <string name="title_activity_client_details">Detalhes do Cliente</string>
+    <string name="title_activity_product_details">Detalhes do Produto</string>
 
     <!-- System Messages -->
     <string name="error_message">Erro ao Carregar</string>
     <string name="load_start">Carregando...</string>
-    <string name="load_complete">Carrgamento Completo</string>
+    <string name="load_complete">Carregamento Completo</string>
     <string name="edit">Alterar</string>
     <string name="details">Detalhes</string>
     <string name="Prices">Preços</string>
-    <string name="desig">Description</string>
+    <string name="txt_price">Preço</string>
+    <string name="desig">Descrição</string>
     <string name="cod">Code</string>
     <string name="upc">U.P.C:</string>
     <string name="pmc">P.M.C:</string>
@@ -198,5 +200,11 @@
     <string name="spec">Especificações:</string>
     <string name="text_balance">Saldo</string>
     <string name="action_code">Código</string>
+    <string name="action_desig">Designação</string>
+    <string name="action_specification">Especificação</string>
+    <string name="txt_iva">IVA</string>
+    <string name="txt_total">Total</string>
+    <string name="txt_quantity">Quantidade</string>
+    <string name="txt_box_unity">Unidade/Caixa</string>
 
 </resources>
