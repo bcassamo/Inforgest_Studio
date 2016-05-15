@@ -22,18 +22,35 @@ public class JSONParser {
 
     public ArrayList<Client> parseClientList(JSONObject object)
     {
-        ArrayList<Client> arrayList=new ArrayList<Client>();
+        ArrayList<Client> arrayList = new ArrayList<Client>();
         try {
-            JSONArray jsonArray=object.getJSONArray("Value");
-            JSONObject jsonObj=null;
-            for(int i=0;i<jsonArray.length();i++)
+            JSONArray jsonArray = object.getJSONArray("Value");
+            JSONObject jsonObj = null;
+            for(int i = 0; i < jsonArray.length(); i++)
             {
-                jsonObj=jsonArray.getJSONObject(i);
+                jsonObj = jsonArray.getJSONObject(i);
                 arrayList.add(new Client(jsonObj.getString("cod_cli"), jsonObj.getString("nome")));
             }
 
         } catch (JSONException e) {
             Log.d("ParseClientList =>", e.getMessage());
+        }
+        return arrayList;
+    }
+
+    public ArrayList<Client> parseCustomerPendentBalance(JSONObject jsonObject) {
+        ArrayList<Client> arrayList = new ArrayList<Client>();
+        try {
+            JSONArray jsonArray = jsonObject.getJSONArray("Value");
+            JSONObject jsonObj = null;
+            for(int i = 0;i < jsonArray.length(); i++)
+            {
+                jsonObj = jsonArray.getJSONObject(i);
+                arrayList.add(new Client(jsonObj.getString("cod_cli"), jsonObj.getString("nome"), jsonObj.getDouble("saldo")));
+            }
+
+        } catch (JSONException e) {
+            Log.d("parseCtomerPdentBal =>", e.getMessage());
         }
         return arrayList;
     }

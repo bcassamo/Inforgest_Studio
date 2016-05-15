@@ -19,6 +19,7 @@ import mz.com.peach.inforgest.fragment.about.AboutFragment;
 import mz.com.peach.inforgest.fragment.customer.CustomerFragment;
 import mz.com.peach.inforgest.fragment.home.HomeFragment;
 import mz.com.peach.inforgest.fragment.product.ProductFragment;
+import mz.com.peach.inforgest.fragment.treasury.TreasuryFragment;
 
 
 public class MainActivity extends ActionBarActivity
@@ -94,7 +95,7 @@ public class MainActivity extends ActionBarActivity
                 break;
             // Treasury
             case 3:
-                fragment = PlaceholderFragment.newInstance(position + 1);
+                fragment = new TreasuryFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
             // Technical assistence
@@ -187,6 +188,12 @@ public class MainActivity extends ActionBarActivity
             case R.id.btnConfWhereHouse:
                 startActivity(new Intent(this, GroupProductListActivity.class));
                 break;
+        }
+    }
+
+    public void treasuryIssueReceiptsOption(View view){
+        if(view.getId() == R.id.btnIssueReceipts){
+            startActivity(new Intent(this, PendentCustomerBalanceListActivity.class));
         }
     }
 

@@ -19,7 +19,11 @@ public class Client {
         this.nome = nome;
     }
 
-
+    public Client(String cod_cli, String nome, double saldo){
+        this.cod_cli = cod_cli;
+        this.nome = nome;
+        this.saldo = saldo;
+    }
 
     public String getCod_cli() {
         return cod_cli;

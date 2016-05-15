@@ -76,10 +76,10 @@
         </activity>
         <activity
             android:name=".ClientListActivity"
-            android:label="@string/title_activity_client_list"></activity>
+            android:label="@string/title_activity_client_list" />
         <activity
             android:name=".ProductListActivity"
-            android:label="@string/title_activity_product_list"></activity>
+            android:label="@string/title_activity_product_list" />
         <activity
             android:name=".ProductActivity"
             android:label="@string/title_activity_product"
@@ -103,6 +103,11 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.ProductListActivity" />
+        </activity>
+        <activity
+            android:name=".PendentCustomerBalanceListActivity"
+            android:label="@string/title_activity_pendent_customer_list">
+
         </activity>
     </application>
 

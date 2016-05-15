@@ -206,5 +206,8 @@
     <string name="txt_total">Total</string>
     <string name="txt_quantity">Quantidade</string>
     <string name="txt_box_unity">Unidade/Caixa</string>
+    <string name="receipts">Recebimentos</string>
+    <string name="btnIssueReceipts">Emitir Recibos</string>
+    <string name="title_activity_pendent_customer_list">Clientes com Saldo Pendente</string>
 
 </resources>
