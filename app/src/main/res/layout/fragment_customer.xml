@@ -22,6 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/btnCustomers"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round_border_button"
             android:id="@+id/btnCustomers"
             android:onClick="customerFilesOption" />
 
@@ -51,6 +53,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnProForm" />
 
 
@@ -59,6 +63,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnCashSale" />
 
 
@@ -67,6 +73,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnDelGuides" />
 
         </LinearLayout>
@@ -82,6 +90,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnInvoice" />
 
 
@@ -90,6 +100,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnCustSearch" />
 
 
@@ -98,6 +110,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnDebitNote" />
 
         </LinearLayout>
@@ -117,11 +131,14 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:padding="12dp"
             android:id="@+id/btnFidelityCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round_border_button"
             android:text="@string/btnFidelityCard" />
 
         <LinearLayout
@@ -134,6 +151,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/btnBaskets"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnBaskets" />
 
             <View
@@ -145,6 +164,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/btnSpent"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_border_button"
                 android:text="@string/btnSpent" />
         </LinearLayout>
     </RelativeLayout>

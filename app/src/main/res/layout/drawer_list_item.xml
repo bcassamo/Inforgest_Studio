@@ -9,6 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:contentDescription="@string/desc_list_item_icon"
+        android:maxWidth="35dp"
+        android:maxHeight="35dp"
         android:adjustViewBounds="true" />
 
 
@@ -22,7 +24,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:textColor="@color/list_text"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
 
 </RelativeLayout>

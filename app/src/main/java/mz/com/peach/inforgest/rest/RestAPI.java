@@ -23,7 +23,7 @@ import java.util.Map;
  * Created by peach on 2/18/15.
  */
 public class RestAPI {
-    private final String urlString = "http://192.168.43.28/IgestRestAPI/Handler1.ashx";
+    private final String urlString = "http://192.168.1.120/IgestRestAPI/Handler1.ashx";
 
     private static String convertStreamToUTF8String(InputStream stream) throws IOException {
         String result = "";

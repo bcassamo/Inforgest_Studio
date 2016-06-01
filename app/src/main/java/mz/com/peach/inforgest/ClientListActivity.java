@@ -74,8 +74,10 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        TextView textView = (TextView) view;
-        String message = (String) textView.getText().subSequence(4, textView.getText().length());
+        String itemTouched = adapter.getItem(position);
+        int size = itemTouched.length();
+        String message = (String) itemTouched.subSequence(4, size);
+        //String message = (String) textView.getText().subSequence(4, textView.getText().length());
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(context, ClientDetailActivity.class);
