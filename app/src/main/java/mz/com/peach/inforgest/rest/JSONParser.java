@@ -1,15 +1,18 @@
 package mz.com.peach.inforgest.rest;
 
+import android.text.format.Time;
 import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import mz.com.peach.inforgest.model.Product;
 import mz.com.peach.inforgest.model.clients.Client;
+import mz.com.peach.inforgest.model.documents.Clidoc;
 
 /**
  * Created by peach on 2/18/15.
@@ -123,6 +126,35 @@ public class JSONParser {
         }
 
         return productDetail;
+    }
 
+    private String getReadableDateString(long time){
+        SimpleDateFormat shortenedDateFormat = new SimpleDateFormat("dd MMM yyyy");
+        return shortenedDateFormat.format(time);
+    }
+
+    public Clidoc parsePaymentBalance(JSONObject object){
+        Clidoc document = new Clidoc();
+        try {
+            JSONObject jsonObject = object.getJSONArray("Value").getJSONObject(0);
+
+            document.setNdoc(jsonObject.getString("ndoc"));
+            document.setNome_cli(jsonObject.getString("nome_cli"));
+
+            Time dayTime = new Time();
+            int day = Integer.parseInt(jsonObject.getString("data").substring(9, 10));
+            int month = Integer.parseInt(jsonObject.getString("data").substring(6, 7));
+            int year = Integer.parseInt(jsonObject.getString("data").substring(0, 4));
+            dayTime.set(day, (month - 1), year);
+
+            document.setData(getReadableDateString(dayTime.toMillis(true)));
+            document.setTotaldoc(jsonObject.getDouble("totaldoc"));
+            document.setValor_pago(jsonObject.getDouble("valor_pago"));
+            document.setValor_a_pagar(jsonObject.getDouble("valor_a_pagar"));
+        }catch (JSONException e){
+            Log.d("parsePaymentBalance =>", e.getMessage());
+        }
+
+        return document;
     }
 }

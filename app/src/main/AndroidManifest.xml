@@ -107,7 +107,14 @@
         <activity
             android:name=".PendentCustomerBalanceListActivity"
             android:label="@string/title_activity_pendent_customer_list">
-
+        </activity>
+        <activity
+            android:name=".PaymentBalanceActivity"
+            android:label="@string/title_activity_payment_balance"
+            android:parentActivityName=".PendentCustomerBalanceListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.PendentCustomerBalanceListActivity" />
         </activity>
     </application>
 

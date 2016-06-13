@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="mz.com.peach.inforgest.PaymentBalanceActivity">
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/action_document_number"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/txtDocumentNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/igest_color"
+            android:textAllCaps="true"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/action_name"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/txtDocumentCliName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/igest_color"
+            android:textAllCaps="true"
+            android:textSize="16dp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/action_document_date"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/txtDocumentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/igest_color"
+            android:inputType="date"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/action_document_total_value"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/txtDocumentTotalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/igest_color"
+            android:inputType="numberDecimal"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/action_document_payed"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/txtDocumentPayed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/igest_color"
+            android:inputType="numberDecimal"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/text_balance"
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/txtDocumentBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/igest_color"
+            android:inputType="numberDecimal"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <TableRow>
+        <EditText
+            android:id="@+id/edtDocumentToPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:inputType="numberDecimal"
+            android:hint="@string/action_document_topay" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:padding="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/btnPay"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round_border_button"
+            android:id="@+id/btnCustomers"
+            android:onClick="PayDocument" />
+    </TableRow>
+
+</TableLayout>

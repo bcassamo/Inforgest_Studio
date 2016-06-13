@@ -1,6 +1,7 @@
 package mz.com.peach.inforgest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -44,7 +45,13 @@ public class PendentCustomerBalanceListActivity extends ActionBarActivity implem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        String itemTouched = adapter.getItem(position);
+        int size = itemTouched.length();
+        String message = (String) itemTouched.subSequence(4, size);
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(context, PaymentBalanceActivity.class).putExtra(Intent.EXTRA_TEXT, message);
+        startActivity(intent);
     }
 
     protected class AsyncLoadPendentCustomerBalance extends AsyncTask<Void, JSONObject, ArrayList<Client>>{
@@ -70,8 +77,12 @@ public class PendentCustomerBalanceListActivity extends ActionBarActivity implem
         @Override
         protected void onPostExecute(ArrayList<Client> clients) {
             // itera a lista de clientes para apresentar no listview
-            for (int i = 0; i < clients.size(); i++) {
+            /*for (int i = 0; i < clients.size(); i++) {
                 data.add((i+1) + " - " + clients.get(i).getNome() + " - " + clients.get(i).getSaldo() + "MT");
+            }*/
+
+            for (int i = 0; i < clients.size(); i++) {
+                data.add((i+1) + " - " + clients.get(i).getNome());
             }
 
             adapter.notifyDataSetChanged();

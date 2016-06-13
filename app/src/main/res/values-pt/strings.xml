@@ -180,6 +180,10 @@
     <string name="title_activity_client_list">Lista de Clientes</string>
     <string name="title_activity_client_details">Detalhes do Cliente</string>
     <string name="title_activity_product_details">Detalhes do Produto</string>
+    <string name="title_activity_pendent_customer_list">Clientes com Saldo Pendente</string>
+    <string name="title_activity_payment_balance">Emissão de Recibo</string>
+
+    <string name="btnPay">Pagar</string>
 
     <!-- System Messages -->
     <string name="error_message">Erro ao Carregar</string>
@@ -202,12 +206,16 @@
     <string name="action_code">Código</string>
     <string name="action_desig">Designação</string>
     <string name="action_specification">Especificação</string>
+    <string name="action_document_number">Num. Documento</string>
+    <string name="action_document_date">Data</string>
+    <string name="action_document_total_value">Total Documento</string>
+    <string name="action_document_payed">Regularizado</string>
+    <string name="action_document_topay">A Pagar</string>
     <string name="txt_iva">IVA</string>
     <string name="txt_total">Total</string>
     <string name="txt_quantity">Quantidade</string>
     <string name="txt_box_unity">Unidade/Caixa</string>
     <string name="receipts">Recebimentos</string>
     <string name="btnIssueReceipts">Emitir Recibos</string>
-    <string name="title_activity_pendent_customer_list">Clientes com Saldo Pendente</string>
 
 </resources>
