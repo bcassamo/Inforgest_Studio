@@ -53,6 +53,7 @@
         <!--<item>Technical assistence</item>
         <item>Listings</item>-->
         <item>About</item>
+        <item>LogOut</item>
     </string-array>
 
     <!-- Archive tab titles -->

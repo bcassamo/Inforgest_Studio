@@ -113,7 +113,18 @@ public class MainActivity extends ActionBarActivity
                 fragment = new AboutFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
+            case 5:
+                signOut();
+                break;
         }
+    }
+
+    private void signOut(){
+        finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 
     public void onSectionAttached(int number) {
@@ -139,7 +150,9 @@ public class MainActivity extends ActionBarActivity
             break;
             case 9: mTitle = getString(R.string.title_section9);
                 break;*/
-            case 15: mTitle = getString(R.string.title_section10);
+            case 5: mTitle = getString(R.string.title_section10);
+                break;
+            case 6: mTitle = "LogOut";
                 break;
         }
     }
