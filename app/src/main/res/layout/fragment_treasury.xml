@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:id="@+id/fragmentTreasury"
     tools:context="mz.com.peach.inforgest.fragment.treasury.TreasuryFragment">
 
     <TextView

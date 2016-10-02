@@ -50,7 +50,11 @@ public class ProductListActivity extends ActionBarActivity implements AdapterVie
         /*registerForContextMenu(listv);*/
 
         Toast.makeText(this, R.string.load_start, Toast.LENGTH_SHORT).show();
-        new AsyncLoadProductList().execute();
+        if(MainActivity.isDeviceOnline(context)) {
+            new AsyncLoadProductList().execute();
+        } else {
+            startActivity(new Intent(context, MainActivity.class));
+        }
     }
 
     /*@Override
@@ -102,10 +106,13 @@ public class ProductListActivity extends ActionBarActivity implements AdapterVie
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id){
+            case android.R.id.home:
+                startActivity(new Intent(context, MainActivity.class));
+                return true;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.action_settings:
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -114,7 +121,11 @@ public class ProductListActivity extends ActionBarActivity implements AdapterVie
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TextView textView = (TextView) view;
-        String message = (String) textView.getText().subSequence(4, textView.getText().length());
+        int realPosition = position + 1;
+        int numberOfCharinSequence = (realPosition + "").length();
+        int numberOfCharToRemove = 3 + numberOfCharinSequence;
+
+        String message = (String) textView.getText().subSequence(numberOfCharToRemove, textView.getText().length());
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(context, ProductDetailsActivity.class);
         intent.putExtra(PRODUCT_EXTRA_MESSAGE, message);

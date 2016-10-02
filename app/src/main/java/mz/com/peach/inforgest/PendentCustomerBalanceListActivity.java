@@ -3,9 +3,14 @@ package mz.com.peach.inforgest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +21,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import mz.com.peach.inforgest.fragment.treasury.TreasuryFragment;
 import mz.com.peach.inforgest.model.clients.Client;
 import mz.com.peach.inforgest.rest.JSONParser;
 import mz.com.peach.inforgest.rest.RestAPI;
@@ -42,6 +48,7 @@ public class PendentCustomerBalanceListActivity extends ActionBarActivity implem
         Toast.makeText(context, R.string.load_start, Toast.LENGTH_SHORT).show();
         new AsyncLoadPendentCustomerBalance().execute();
     }
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

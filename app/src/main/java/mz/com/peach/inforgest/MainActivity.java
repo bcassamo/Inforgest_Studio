@@ -1,7 +1,10 @@
 package mz.com.peach.inforgest;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import mz.com.peach.inforgest.dao.InforgestDAO;
 import mz.com.peach.inforgest.fragment.about.AboutFragment;
@@ -36,6 +40,16 @@ public class MainActivity extends ActionBarActivity
     private CharSequence mTitle;
     private InforgestDAO dao;
 
+    public static boolean isDeviceOnline(Context context){
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        boolean isOnline = (networkInfo != null && networkInfo.isConnected());
+        if(!isOnline){
+            Toast.makeText(context, " No internet Connection ", Toast.LENGTH_SHORT).show();
+        }
+        return isOnline;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +71,6 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        /*fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();*/
 
         Fragment fragment;
         switch (position) {
@@ -68,46 +79,19 @@ public class MainActivity extends ActionBarActivity
                 fragment = new HomeFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
-            // System
-            /*case 1:
-                fragment = PlaceholderFragment.newInstance(position + 1);
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;*/
-            // Archive
-            /*case 2:
-                fragment = new ArchiveFragment();
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;*/
             // Client
             case 1:
-                fragment = new CustomerFragment();
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                startActivity(new Intent(this, ClientListActivity.class));
                 break;
-            // Suppliers
-            /*case 4:
-                fragment = new SupplierFragment();
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;*/
             // Products
             case 2:
-                fragment = new ProductFragment();
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                startActivity(new Intent(this, ProductListActivity.class));
                 break;
             // Treasury
             case 3:
                 fragment = new TreasuryFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
-            // Technical assistence
-            /*case 7:
-                fragment = PlaceholderFragment.newInstance(position + 1);
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;*/
-            // Listings
-            /*case 8:
-                fragment = PlaceholderFragment.newInstance(position + 1);
-                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-                break;*/
             // About
             case 4:
                 fragment = new AboutFragment();
@@ -132,27 +116,15 @@ public class MainActivity extends ActionBarActivity
             case 1:
                 mTitle = getString(R.string.title_section1);
                 break;
-            /*case 2:
-                mTitle = getString(R.string.title_section2);
-                break;*/
-            /*case 3:
-                mTitle = getString(R.string.title_section3);
-                break;*/
-            case 2: mTitle = getString(R.string.title_section4);
+            case 2: mTitle = getString(R.string.title_section2);
                 break;
-            /*case 5: mTitle = getString(R.string.title_section5);
-                break;*/
-            case 3: mTitle = getString(R.string.title_section6);
+            case 3: mTitle = getString(R.string.title_section3);
                 break;
-            case 4: mTitle = getString(R.string.title_section7);
+            case 4: mTitle = getString(R.string.title_section4);
                 break;
-            /*case 8: mTitle = getString(R.string.title_section8);
-            break;
-            case 9: mTitle = getString(R.string.title_section9);
-                break;*/
-            case 5: mTitle = getString(R.string.title_section10);
+            case 5: mTitle = getString(R.string.title_section5);
                 break;
-            case 6: mTitle = "LogOut";
+            case 6: mTitle = getString(R.string.title_section6);
                 break;
         }
     }

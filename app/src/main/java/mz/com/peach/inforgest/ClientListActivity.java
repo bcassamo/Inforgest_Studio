@@ -2,6 +2,8 @@ package mz.com.peach.inforgest;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -46,9 +48,13 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
         listv.setAdapter(adapter);
         listv.setOnItemClickListener(this);
         Toast.makeText(context, R.string.load_start, Toast.LENGTH_SHORT).show();
-        new AsyncLoadClientList().execute();
+        if(MainActivity.isDeviceOnline(context)) {
+            new AsyncLoadClientList().execute();
+        }
+        else {
+            startActivity(new Intent(context, MainActivity.class));
+        }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,11 +69,15 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id){
+            case android.R.id.home:
+                startActivity(new Intent(context, MainActivity.class));
+                return true;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.action_settings:
+                return true;
         }
+        //noinspection SimplifiableIfStatement
 
         return super.onOptionsItemSelected(item);
     }
@@ -76,7 +86,11 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String itemTouched = adapter.getItem(position);
         int size = itemTouched.length();
-        String message = (String) itemTouched.subSequence(4, size);
+        int realPosition = position + 1;
+        int numberOfCharinSequence = (realPosition + "").length();
+        int numberOfCharToRemove = 3 + numberOfCharinSequence;
+
+        String message = (String) itemTouched.subSequence(numberOfCharToRemove, size);
         //String message = (String) textView.getText().subSequence(4, textView.getText().length());
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
@@ -95,13 +109,10 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
 
             RestAPI api = new RestAPI();
             try {
-
                 JSONObject jsonObj = api.GetClientList();
-
                 JSONParser parser = new JSONParser();
 
                 clientList = parser.parseClientList(jsonObj);
-
             } catch (Exception e) {
                 Log.d("AsyncLoadClientList", e.getMessage());
                 Toast.makeText(context, R.string.error_message,Toast.LENGTH_LONG).show();
@@ -112,7 +123,6 @@ public class ClientListActivity extends ActionBarActivity implements AdapterView
 
         @Override
         protected void onPostExecute(ArrayList<Client> result) {
-
             // itera a lista de clientes para apresentar no listview
             for (int i = 0; i < result.size(); i++) {
                 data.add((i+1) + " - " + result.get(i).getNome());

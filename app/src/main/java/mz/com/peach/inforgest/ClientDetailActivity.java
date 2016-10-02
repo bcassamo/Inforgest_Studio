@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import mz.com.peach.inforgest.rest.RestAPI;
 
 public class ClientDetailActivity extends ActionBarActivity {
 
+    public final static String CLIENT_EXTRA_MESSAGE = "mz.com.peach.inforgest.CLIENT_MESSAGE";
     TextView code, name, balance;
     Context context;
 
@@ -32,6 +34,14 @@ public class ClientDetailActivity extends ActionBarActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(ClientListActivity.CLIENT_EXTRA_MESSAGE);
         new AsyncClientDetails().execute(message);
+    }
+
+    public void currentAccounts(View view){
+        if(view.getId() == R.id.btnCurrentAccounts) {
+            Intent intent = new Intent(context, CurrentAccountsActivity.class);
+            intent.putExtra(CLIENT_EXTRA_MESSAGE, name.getText());
+            startActivity(intent);
+        }
     }
 
     protected class AsyncClientDetails extends

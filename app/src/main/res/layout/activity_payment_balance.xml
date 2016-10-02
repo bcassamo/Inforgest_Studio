@@ -115,13 +115,16 @@
     </TableRow>
 
     <TableRow>
+
         <EditText
             android:id="@+id/edtDocumentToPay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:inputType="numberDecimal"
-            android:hint="@string/action_document_topay" />
+            android:hint="@string/action_document_topay"
+            android:layout_column="0"
+            android:layout_span="20" />
     </TableRow>
 
     <TableRow>

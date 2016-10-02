@@ -11,15 +11,11 @@
     <string name="igest_welcome">Bem Vindo ao InforGest</string>
     <string name="designed_by">Desenhado por Banucho Cassamo</string>
     <string name="title_section1">Casa</string>
-    <string name="title_section2">Sistema</string>
-    <string name="title_section3">Arquivo</string>
-    <string name="title_section4">Cliente</string>
-    <string name="title_section5">Fornecedores</string>
-    <string name="title_section6">Produtos</string>
-    <string name="title_section7">Tesouraria</string>
-    <string name="title_section8">Assistência Técnica</string>
-    <string name="title_section9">Listings</string>
-    <string name="title_section10">About</string>
+    <string name="title_section2">Cliente</string>
+    <string name="title_section3">Produtos</string>
+    <string name="title_section4">Tesouraria</string>
+    <string name="title_section5">About</string>
+    <string name="title_section6">Sair</string>
 
     <!-- Navigation Titles -->
     <string name="action_new">Novo</string>
@@ -31,6 +27,7 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Definições</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_client_current_accounts">Contas Correntes do Cliente</string>
     <string name="hello_world">Ola Mundo!</string>
 
     <!-- Hints -->
@@ -183,6 +180,7 @@
     <string name="title_activity_product_details">Detalhes do Produto</string>
     <string name="title_activity_pendent_customer_list">Clientes com Saldo Pendente</string>
     <string name="title_activity_payment_balance">Emissão de Recibo</string>
+    <string name="title_activity_product_list">Produtos</string>
 
     <string name="btnPay">Pagar</string>
 
@@ -218,5 +216,5 @@
     <string name="txt_box_unity">Unidade/Caixa</string>
     <string name="receipts">Recebimentos</string>
     <string name="btnIssueReceipts">Emitir Recibos</string>
-
+    <string name="btnCurrentAccounts">Contas correntes</string>
 </resources>

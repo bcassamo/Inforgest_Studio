@@ -13,6 +13,12 @@ import mz.com.peach.inforgest.R;
  * Created by peach on 12/27/14.
  */
 public class HomeFragment extends Fragment{
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_home, container, false);

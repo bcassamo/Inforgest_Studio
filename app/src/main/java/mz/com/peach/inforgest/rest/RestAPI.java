@@ -156,6 +156,20 @@ public class RestAPI {
         return result;
     }
 
+    public JSONObject GetCustomerCurrentAccounts(String cod_cli) throws Exception {
+        JSONObject result = null;
+        JSONObject o = new JSONObject();
+        JSONObject p = new JSONObject();
+        o.put("interface","RestAPI");
+        o.put("method", "GetCustomerCurrentAccounts");
+        p.put("cod_cli",mapObject(cod_cli));
+        o.put("parameters", p);
+        String s = o.toString();
+        String r = load(s);
+        result = new JSONObject(r);
+        return result;
+    }
+
     public JSONObject GetProductList() throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();

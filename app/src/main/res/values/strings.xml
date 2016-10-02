@@ -11,15 +11,11 @@
     <string name="igest_welcome">Welcome to InforGest</string>
     <string name="designed_by">Designed By Banucho Cassamo</string>
     <string name="title_section1">Home</string>
-    <string name="title_section2">System</string>
-    <string name="title_section3">Archive</string>
-    <string name="title_section4">Client</string>
-    <string name="title_section5">Suppliers</string>
-    <string name="title_section6">Products</string>
-    <string name="title_section7">Treasury</string>
-    <string name="title_section8">Technical assistence</string>
-    <string name="title_section9">Listings</string>
-    <string name="title_section10">About</string>
+    <string name="title_section2">Client</string>
+    <string name="title_section3">Products</string>
+    <string name="title_section4">Treasury</string>
+    <string name="title_section5">About</string>
+    <string name="title_section6">LogOut</string>
 
     <!-- Navigation Titles -->
     <string name="action_new">New</string>
@@ -31,6 +27,7 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_client_current_accounts">Customer Current accounts</string>
     <string name="hello_world">Hello world!</string>
 
     <!-- Hints -->
@@ -190,7 +187,7 @@
     <string name="error_message">Error loading</string>
     <string name="load_start">Loading Please Wait...</string>
     <string name="load_complete">Loading Completed</string>
-    <string name="title_activity_product_list">ProductListActivity</string>
+    <string name="title_activity_product_list">Products</string>
     <string name="edit">Edit</string>
     <string name="details">Details</string>
     <string name="Prices">Prices</string>
@@ -221,6 +218,6 @@
     <string name="receipts">Receipts</string>
     <string name="btnIssueReceipts">Issue Receipts</string>
     <string name="title_activity_pendent_customer_list">Customers With Outstanding Balance</string>
-
+    <string name="btnCurrentAccounts">Current Accounts</string>
 
 </resources>

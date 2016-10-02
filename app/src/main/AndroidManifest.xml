@@ -3,6 +3,12 @@
     package="mz.com.peach.inforgest">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -76,10 +82,20 @@
         </activity>
         <activity
             android:name=".ClientListActivity"
-            android:label="@string/title_activity_client_list" />
+            android:label="@string/title_activity_client_list"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.MainActivity" />
+        </activity>
         <activity
             android:name=".ProductListActivity"
-            android:label="@string/title_activity_product_list" />
+            android:label="@string/title_activity_product_list"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.MainActivity" />
+        </activity>
         <activity
             android:name=".ProductActivity"
             android:label="@string/title_activity_product"
@@ -106,7 +122,8 @@
         </activity>
         <activity
             android:name=".PendentCustomerBalanceListActivity"
-            android:label="@string/title_activity_pendent_customer_list">
+            android:label="@string/title_activity_pendent_customer_list" >
+
         </activity>
         <activity
             android:name=".PaymentBalanceActivity"
@@ -115,6 +132,13 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mz.com.peach.inforgest.PendentCustomerBalanceListActivity" />
+        </activity>
+        <activity android:name=".CurrentAccountsActivity"
+            android:label="@string/title_activity_client_current_accounts"
+            android:parentActivityName=".ClientDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mz.com.peach.inforgest.ClientDetailActivity" />
         </activity>
     </application>
 

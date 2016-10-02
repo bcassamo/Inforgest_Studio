@@ -1,13 +1,11 @@
 package mz.com.peach.inforgest.rest;
 
-import android.text.format.Time;
 import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import mz.com.peach.inforgest.model.Product;
@@ -128,11 +126,6 @@ public class JSONParser {
         return productDetail;
     }
 
-    private String getReadableDateString(long time){
-        SimpleDateFormat shortenedDateFormat = new SimpleDateFormat("dd MMM yyyy");
-        return shortenedDateFormat.format(time);
-    }
-
     public Clidoc parsePaymentBalance(JSONObject object){
         Clidoc document = new Clidoc();
         try {
@@ -140,14 +133,7 @@ public class JSONParser {
 
             document.setNdoc(jsonObject.getString("ndoc"));
             document.setNome_cli(jsonObject.getString("nome_cli"));
-
-            Time dayTime = new Time();
-            int day = Integer.parseInt(jsonObject.getString("data").substring(9, 10));
-            int month = Integer.parseInt(jsonObject.getString("data").substring(6, 7));
-            int year = Integer.parseInt(jsonObject.getString("data").substring(0, 4));
-            dayTime.set(day, (month - 1), year);
-
-            document.setData(getReadableDateString(dayTime.toMillis(true)));
+            document.setData(jsonObject.getString("data").substring(0, 10));
             document.setTotaldoc(jsonObject.getDouble("totaldoc"));
             document.setValor_pago(jsonObject.getDouble("valor_pago"));
             document.setValor_a_pagar(jsonObject.getDouble("valor_a_pagar"));
@@ -156,5 +142,22 @@ public class JSONParser {
         }
 
         return document;
+    }
+
+    public ArrayList<Clidoc> parseCustomerCurrentAccounts(JSONObject object){
+        ArrayList<Clidoc> clidocs = new ArrayList<Clidoc>();
+        try {
+            JSONArray jsonArray=object.getJSONArray("Value");
+            JSONObject jsonObj=null;
+            for(int i=0;i<jsonArray.length();i++)
+            {
+                jsonObj=jsonArray.getJSONObject(i);
+                clidocs.add(new Clidoc(jsonObj.getString("data"), jsonObj.getString("cod_cli"), jsonObj.getString("ndoc"), jsonObj.getString("orig_doc"), jsonObj.getDouble("debito"), jsonObj.getDouble("credito")));
+            }
+
+        } catch (JSONException e) {
+            Log.d("parseCust_Cur_Acc =>", e.getMessage());
+        }
+        return clidocs;
     }
 }
