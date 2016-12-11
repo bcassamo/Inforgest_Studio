@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:paddingLeft="10dp"
         android:id="@+id/tvDate"
-        android:text="TextView"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent">
+        android:layout_width="wrap_content"
+        android:textColor="@color/igest_color"
+        android:textSize="15dp" />
+
+    <TextView
+        android:paddingLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/tvOrDoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/igest_color"
+        android:textSize="15dp" >
     </TextView>
 
     <TextView
-        android:id="@+id/tvNrDoc"
-        android:text="TextView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-    </TextView>
-
-    <TextView
+        android:padding="5dp"
         android:id="@+id/tvBalance"
-        android:text="TextView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/igest_color"
+        android:textSize="20dp">
     </TextView>
-
-</LinearLayout>
+</RelativeLayout>

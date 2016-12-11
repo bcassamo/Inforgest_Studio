@@ -19,6 +19,7 @@ import mz.com.peach.inforgest.rest.RestAPI;
 public class ClientDetailActivity extends ActionBarActivity {
 
     public final static String CLIENT_EXTRA_MESSAGE = "mz.com.peach.inforgest.CLIENT_MESSAGE";
+    public final static String CLIENT_EXTRA_MESSAGE_CODE = "mz.com.peach.inforgest.CLIENT_MESSAGE_CODE";
     TextView code, name, balance;
     Context context;
 
@@ -40,6 +41,7 @@ public class ClientDetailActivity extends ActionBarActivity {
         if(view.getId() == R.id.btnCurrentAccounts) {
             Intent intent = new Intent(context, CurrentAccountsActivity.class);
             intent.putExtra(CLIENT_EXTRA_MESSAGE, name.getText());
+            intent.putExtra(CLIENT_EXTRA_MESSAGE_CODE, code.getText());
             startActivity(intent);
         }
     }
